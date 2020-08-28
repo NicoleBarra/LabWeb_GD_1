@@ -1,7 +1,35 @@
 // Importa el paquete de express
 let express = require('express');
-// Obtiene una instancia de express
-let app = express();
+
+var bodyParser = require('body-parser')
+
+
+
+// Obtiene una instancia de express 
+var app = express()
+ 
+// create application/json parser
+var jsonParser = bodyParser.json()
+ 
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Sobreescribe el método de envío
+let methodOverride = require('method-override')
+// sobreescribe el método POST
+app.use(methodOverride('_method'))
+ 
+// POST /login gets urlencoded bodies
+app.post('/login', urlencodedParser, function (req, res) {
+  res.send('welcome, ' + req.body.username)
+})
+ 
+// POST /api/users gets JSON bodies
+app.post('/api/users', jsonParser, function (req, res) {
+  // create user in req.body
+})
 
 // Importa las configuraciones
 let appRoutes = require('./routes/app');

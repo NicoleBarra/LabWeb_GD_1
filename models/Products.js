@@ -19,13 +19,13 @@ exports.all = () => {
 
 // Almacen en la base de datos el producto
 exports.create = (product) => {
-  return knex('products')
-    .insert({
-      name: product.name,
-      price: product.price,
-      description: product.description
-    });
-}
+    return knex('products')
+      .insert({
+        name: product.name,
+        price: product.price,
+        description: product.description
+      });
+  }
 
 // Obtiene la información de un producto por su id
 exports.find = (id) => {

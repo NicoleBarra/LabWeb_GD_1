@@ -16,3 +16,4 @@ exports.homepage = (req, res) => {
 exports.about = (req, res) => {
   res.send('About us');
 }
+

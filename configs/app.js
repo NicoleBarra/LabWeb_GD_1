@@ -10,7 +10,7 @@ const appConfig = {
   // Como ninguna versión de Node soporta _nullish coalescing operator (??)_ tenemos
   // que usar una operación lógica.
   env: process.env.NODE_ENV || 'development',
-  express_port: process.env.EXPRESS_PORT || 3306
+  express_port: process.env.EXPRESS_PORT || 8000
 }
 
 module.exports = appConfig;
