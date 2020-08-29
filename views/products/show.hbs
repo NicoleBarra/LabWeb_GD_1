@@ -5,8 +5,19 @@
         <td>{{product.name}}</td>
     </tr>
     <tr>
+        <th>Description</th>
+        <td>{{product.description}}</td>
+    </tr>
+    <tr>
         <th>Price</th>
         <td>{{product.price}}</td>
+    </tr>
+    <tr>
+        <th></th>
+        <td>
+            <button onclick="window.location.href='./{{product.id}}/edit'">EDIT ?</button>
+            
+        </td>
     </tr>
     <tr>
         <th></th>
